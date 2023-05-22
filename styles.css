@@ -97,8 +97,7 @@
     width: 25%;
  }
  .boton-encriptador:hover,
- .boton-desencriptar:hover,
- .boton-copiar:hover{
+ .boton-desencriptar:hover{
     margin: 0.3%;
     width: 24.5%;
     padding: 1.8%;
@@ -133,6 +132,11 @@
     text-align: center;
     color: #0a3871;
     width: 100%;
+ }
+ .boton-copiar:hover{
+    margin: 0.3%;
+    width: 99.5%;
+    padding: 1.5%;
  }
  .mensaje-encriptado{
     display: flex;
