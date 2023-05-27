@@ -2,7 +2,7 @@ function encriptar() {
     let texto = document.getElementById("texto").value;
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
-    let mapa = document.getElementById("imagen");
+    let imagen = document.getElementById("imagen");
 
 
     let textoCifrado = texto
@@ -29,7 +29,7 @@ function desencriptar() {
     let texto = document.getElementById ("texto").value;
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
-    let mapa = document.getElementById("imagen");
+    let imagen = document.getElementById("imagen");
 
     let textoCifrado = texto
         .replace(/enter/gi, "e")
@@ -50,9 +50,49 @@ function desencriptar() {
         parrafo.textContent = "Ingresa el texto que desaeas encriptar o desencriptar";
         swal ("Ooops","Debes ingresar un texto", "warning");
 
-    }   
+    }
+    
+   
 
 }
+function copiara(){
+    let texto = document.getElementById('texto');
+    texto.select();
+    texto.setSelectionRange(0,99999);
+    document.execCommand('copy');}
+/*function copiar(texto){
+    if(typeof texto != "string"){
+        throw TypeError("El argumento debe ser una cadena de caracteres.");
+    }
+    let areatexto= document.createElement('textarea');
+    areatexto.value= texto;
+    areatexto.setAttribute("readonly","");
+    areatexto.style.position='absolute';
+    areatexto.style.left='-9999px';
+    document.body.appendChild(areatexto);
+    let seleccionado= document.getSelection().rangeCount > 0 ? document.getSelection().getRangeat(0) : false;
+    areatexto.select();
+     document.array.forEach((texto.length !=0)  {
+        execCommand(cut);
+     });
+    document.body.removeChild(areatexto);
+    if (seleccionado){
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(seleccionado);
+    }
+}
+      window.onload = function(){ 
+    document.getElementById("botoncopiar").addEventListener("click",()=>{
+        let contenido = document.getElementById("contenido").value;
+        copiar(contenido);
+    })
+}*/
+
+/*texto.clipboard
+  .readText()
+  .then(
+    (clipText) => (document.querySelector(".botcopiar").innerText += clipText)
+  );*/
 /*
 function copiar(){ 
     const button = document.querySelector("texto");
