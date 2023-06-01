@@ -6,10 +6,13 @@
         <title>Encriptador de Texto</title>
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
         <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="resett.css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div 
+        class="container">
+        <img src="img/logo-alura.jpeg" alt="logo alura" id="alura">
             <div class="encriptador">
                 <textarea 
                     name="texto" 
@@ -24,7 +27,7 @@
                     <p>Solo letras minúsculas y sin acentos.</p>
                 </div>
                 <div class="botones">
-                    <button class="boton-encriptar" type="button" onclick="encriptar()">
+                    <button id="encriptarb" class="boton-encriptar" type="button" onclick="encriptar()">
                         Encriptar
                     </button>
                     <input 
@@ -39,14 +42,16 @@
              <img src="img/encriptado.jpeg" alt="" id="imagen">
              <div class="mensaje-encriptado" id="mensaje-encriptado">
                 <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
-                <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
+                <p 
+                 id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
+                 <textarea name="mensaje" id="mensaje" class="mensaje" cols="30" rows="10" placeholder="No hay texto para copiar"></textarea>
                 <div>
-                    <button class="botoncopiar" onclick="copiara()">Copiar</button>
+                    <button class="botoncopiar" onclick="copiara()">✍ Copiar</button>
                 </div>
              </div>
             </div>
         </div>
-        <audio src=""controls loop ></audio> 
+        <!--<audio src=""controls loop ></audio> -->
     </body>
     <script src="index.js"></script>
 </html>

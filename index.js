@@ -3,9 +3,9 @@ function encriptar() {
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
     let imagen = document.getElementById("imagen");
+    let mensaje = document.getElementById('mensaje');
 
-
-    let textoCifrado = texto
+    let textocifrado = texto
         .replace(/e/gi, "enter")
         .replace(/i/gi, "imes")
         .replace(/a/gi, "ai")
@@ -13,7 +13,8 @@ function encriptar() {
         .replace(/u/gi, "ufat");
 
     if (texto.length != 0) {
-        document.getElementById("texto").value = textoCifrado;
+        document.getElementById("texto").value = textocifrado;
+        document.getElementById("mensaje").value = textocifrado;
         tituloMensaje.textContent = "Texto encriptado con éxito";
         parrafo.textContent = "";
         imagen.src = "./img/desincriptar.jpg";
@@ -30,7 +31,7 @@ function desencriptar() {
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
     let imagen = document.getElementById("imagen");
-
+    let mensaje = document.getElementById('mensaje');
     let textoCifrado = texto
         .replace(/enter/gi, "e")
         .replace(/imes/gi, "i")
@@ -40,6 +41,7 @@ function desencriptar() {
 
     if (texto.length != 0) {
         document.getElementById("texto").value = textoCifrado;
+        document.getElementById("mensaje").value = textoCifrado;
         tituloMensaje.textContent = "Texto desencriptado con éxito";
         parrafo.textContent = "";
         imagen.src = "./img/encriptado.jpeg";
@@ -51,16 +53,18 @@ function desencriptar() {
         swal ("Ooops","Debes ingresar un texto", "warning");
 
     }
-    
-   
-
 }
 function copiara(){
-    let texto = document.getElementById('texto');
-    texto.select();
-    texto.setSelectionRange(0,99999);
-    document.execCommand('copy');}
-/*function copiar(texto){
+        let mensaje = document.getElementById('mensaje');
+        mensaje.select();
+        mensaje.setSelectionRange(0,99999);
+        document.execCommand('copy');
+        swal ("✍","Has copiado texto", "warning");
+       
+     
+}
+/*
+function copiar(texto){
     if(typeof texto != "string"){
         throw TypeError("El argumento debe ser una cadena de caracteres.");
     }
@@ -72,9 +76,7 @@ function copiara(){
     document.body.appendChild(areatexto);
     let seleccionado= document.getSelection().rangeCount > 0 ? document.getSelection().getRangeat(0) : false;
     areatexto.select();
-     document.array.forEach((texto.length !=0)  {
-        execCommand(cut);
-     });
+     document.execCommand('copy');
     document.body.removeChild(areatexto);
     if (seleccionado){
         document.getSelection().removeAllRanges();
